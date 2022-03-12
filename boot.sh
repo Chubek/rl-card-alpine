@@ -7,4 +7,4 @@ cd /rlcard/pve_server && python run_douzero.py > /home/logs/douzero.log
 cd /rlcard/pve_server && python python3 run_dmc.py > /home/logs/dmc.log
 
 
-cd /rlcard && npm start
+cd /rlcard && ~/.nvm/v$NODE_VERSION/bin/npm start

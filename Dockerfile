@@ -19,7 +19,7 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | 
                 && nvm alias default $NODE_VERSION\
                 && nvm use default\
                 && git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
-                && cd rlcard && npm install && pip install -r requirements.txt && cd server && python3 manage.py migrate \
+                && cd rlcard && ~/.nvm/v$NODE_VERSION/bin/npm install && pip install -r requirements.txt && cd server && python3 manage.py migrate \
                 && mkdir /home/logs \
                 && pip install gdown \
                 && gdown 'https://drive.google.com/uc?id=1zx-20xNBDbCFd8GWhZFUkl07lofbNHpy' /rlcard/pve_server \
