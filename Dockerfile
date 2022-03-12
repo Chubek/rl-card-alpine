@@ -10,7 +10,8 @@ RUN apk add unzip
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 
-RUN nvm install lts
+
+RUN export NVM_DIR="$HOME/.nvm" && nvm install lts
 
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard
 
