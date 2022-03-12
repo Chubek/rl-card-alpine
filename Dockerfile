@@ -11,7 +11,7 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | 
 
 
 
-RUN export NVM_DIR="$HOME/.nvm" && nvm install lts
+RUN export PATH=$PATH:~/.nvm && nvm install --lts
 
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard
 
