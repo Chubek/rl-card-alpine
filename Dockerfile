@@ -14,7 +14,6 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | 
                 && nvm install --lts\
                 && nvm alias default lts/*\
                 && nvm use default\
-                && bash exec\
                 && git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && cd rlcard && npm install && pip install -r requirements.txt && cd server && python3 manage.py migrate \
                 && mkdir /home/logs \
