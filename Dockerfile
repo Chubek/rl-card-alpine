@@ -8,11 +8,15 @@ RUN apk add unzip
 
 COPY boot.sh ./
 
+ENV NODE_VERSION 16.13.1
+
+ENV NODE_PATH ~/.nvm/v$NODE_VERSION/lib/node_modules
+ENV PATH      ~/.nvm/v$NODE_VERSION/bin:$PATH
 
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
                 &&  .  ~/.nvm/nvm.sh\
-                && nvm install --lts\
-                && nvm alias default lts/*\
+                && nvm install $NODE_VERSION\
+                && nvm alias default $NODE_VERSION\
                 && nvm use default\
                 && git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && cd rlcard && npm install && pip install -r requirements.txt && cd server && python3 manage.py migrate \
