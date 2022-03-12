@@ -24,11 +24,9 @@ RUN cd rlcard && npm install && pip install -r requirements.txt && cd server && 
 RUN mkdir /home/logs
 
 
-RUN pip install gdown
-
-RUN gdown 'https://drive.google.com/uc?id=1zx-20xNBDbCFd8GWhZFUkl07lofbNHpy' /rlcard/pve_server
-
-RUN unzip /rlcard/pve_server/pretrained.zip -d /rlcard/pve_server
+RUN pip install gdown \
+    && gdown 'https://drive.google.com/uc?id=1zx-20xNBDbCFd8GWhZFUkl07lofbNHpy' /rlcard/pve_server \
+            && unzip /rlcard/pve_server/pretrained.zip -d /rlcard/pve_server
 
 COPY boot.sh ./
 
