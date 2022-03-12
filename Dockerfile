@@ -10,7 +10,7 @@ RUN apk add unzip
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
                 &&  .  ~/.nvm/nvm.sh\
                 && nvm install --lts\
-                && nvm alias default --lts
+                && nvm alias default lts/*
 
 
 
