@@ -6,7 +6,8 @@ FROM node:16-alpine
 RUN apk add bash       \
     &&  apk add git     \
     &&  apk add wget     \
-    &&  apk add unzip 
+    &&  apk add unzip      \
+    &&  apk add util-linux
 
 COPY boot.sh ./
 
