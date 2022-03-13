@@ -1,5 +1,3 @@
-FROM python:3.9-alpine
-FROM python:2.7-alpine
 FROM node:16-alpine
 
 
@@ -7,12 +5,14 @@ RUN apk add bash       \
     &&  apk add git     \
     &&  apk add wget     \
     &&  apk add unzip      \
-    &&  apk add util-linux
+    &&  apk add util-linux  \
+    &&  apk add python3 py3-pip \
+    &&  apk add python2
 
 COPY boot.sh ./
 
-RUN echo $(whereis python)
 
+RUN echo $(whereis python)
 
 ENV PYTHON /usr/bin/python2.7
 
