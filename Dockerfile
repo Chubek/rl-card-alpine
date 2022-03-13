@@ -5,7 +5,8 @@ RUN apk add bash       \
     &&  apk add git     \
     &&  apk add wget     \
     &&  apk add unzip      \
-    &&  apk add nodejs npm
+    &&  apk add nodejs npm  \
+    &&  apk add cmake make gcc
 
 
 COPY boot.sh ./
