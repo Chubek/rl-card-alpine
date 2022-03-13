@@ -10,7 +10,7 @@ RUN apk add bash       \
 
 COPY boot.sh ./
 
-RUN echo ${whereis python}
+RUN echo $(whereis python)
 
 
 ENV PYTHON /usr/bin/python2.7
