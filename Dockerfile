@@ -1,7 +1,7 @@
 FROM python:3.9.10
 
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y git wget unzip nodejs npm build-essential make cmake
+RUN apt-get update && apt-get upgrade -y && apt-get install -y git wget unzip nodejs npm build-essential make cmake python2
 
 COPY boot.sh ./
 
