@@ -15,6 +15,9 @@ RUN     echo    'alias pip3="/usr/bin/pip3"' >> ~/.bashrc               \
     &&  echo    'alias python3="/usr/bin/python3.9"' >> ~/.bashrc        \
     &&  echo    'alias python="/usr/bin/python2.7"' >> ~/.bashrc
 
+
+ENV PYTHON /usr/bin/python2.7
+
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && cd rlcard \
                 && npm --force --add-python-to-path='true' install \
