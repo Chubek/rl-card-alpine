@@ -19,7 +19,12 @@ ENV PYTHON /usr/bin/python
 
 RUN /usr/bin/python3.9 -m pip install --upgrade pip
 
-RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
+RUN  git clone --recursive https://github.com/Microsoft/onnxruntime \
+                && cd onnxruntime \
+                && ./build.sh --config RelWithDebInfo --build_shared_lib --parallel \
+                && && /usr/bin/python3.9 -m pip install .
+
+RUN git clone https://github.com/Chubek/rlcard-showdown.git rlcard \
                 && cd rlcard \
                 && /usr/bin/python3.9 -m pip install -r requirements.txt \
                 && npm --force install \                
