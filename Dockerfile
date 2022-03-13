@@ -7,14 +7,14 @@ RUN apk add bash       \
     &&  apk add unzip      \
     &&  apk add util-linux  \
     &&  apk add python3 py3-pip \
-    &&  apk add python2
+    &&  apk add python2 \
+    &&  apk add cmake   \
+    &&  apk add make    \
+    &&  apk add gcc
 
 COPY boot.sh ./
 
-
-RUN echo $(whereis python)
-
-ENV PYTHON /usr/bin/python2.7
+ENV PYTHON /usr/bin/python
 
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && cd rlcard \
