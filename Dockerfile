@@ -1,6 +1,6 @@
-FROM python:3.9-alpine3.14
-FROM python:2.7-alpine3.14
-FROM node:17-alpine3.14
+FROM python:3.9-alpine
+FROM python:2.7-alpine
+FROM node:16-alpine
 
 
 RUN apk add bash\
