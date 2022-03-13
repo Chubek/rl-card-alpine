@@ -15,5 +15,5 @@ services:
       - "8300:8000"
       - "5300:5000"
       - "3300:3000"
-    command: "./boot_main_dm.sh"
+    command: "./boot_main_dmc.sh"
   
