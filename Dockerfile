@@ -6,11 +6,11 @@ FROM node:16-alpine
 RUN apk add bash       \
     &&  apk add git     \
     &&  apk add wget     \
-    &&  apk add unzip
+    &&  apk add unzip 
 
 COPY boot.sh ./
 
-
+RUN echo ${whereis python}
 
 
 ENV PYTHON /usr/bin/python2.7
