@@ -3,7 +3,7 @@ FROM python:3.9.10
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y git wget unzip nodejs npm build-essential make cmake python2
 
-COPY boot.sh dlunzip.py ./
+COPY boot.sh dlunzip.py boot_server.sh boot_dmc.sh boot_douzero.sh boot_npm.sh ./
 
 
 RUN python3.9 -m pip install --upgrade pip
