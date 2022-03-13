@@ -1,0 +1,19 @@
+services:
+  rlcard-douzero:
+    container_name: rlcdouzero
+    build: .  
+    ports:
+      - "8200:8000"
+      - "5200:5000"
+      - "3200:3000"
+    command: "./boot_main_douzero.sh"
+
+  rlcard-dmc:
+    container_name: rlcdmc
+    build: .  
+    ports:
+      - "8300:8000"
+      - "5300:5000"
+      - "3300:3000"
+    command: "./boot_main_dm.sh"
+  
