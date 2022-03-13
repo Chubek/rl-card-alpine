@@ -1,4 +1,5 @@
-FROM python:3.9-alpine
+FROM python:3.9-alpine3.14
+FROM node:17-alpine3.14
 
 
 RUN apk add bash
@@ -8,18 +9,6 @@ RUN apk add unzip
 
 COPY boot.sh ./
 
-ENV NODE_VERSION 16.13.1
-
-
-RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
-                &&  .  ~/.nvm/nvm.sh\
-                && nvm install $NODE_VERSION\
-                && nvm alias default $NODE_VERSION\
-                && nvm use default
-
-
-ENV NODE_PATH ~/.nvm/versions/node/v$NODE_VERSION/lib/node_modules
-ENV PATH      ~/.nvm/versions/node/v$NODE_VERSION/bin:$PATH
 
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && cd rlcard && npm install && pip install -r requirements.txt && cd server && python3 manage.py migrate \
