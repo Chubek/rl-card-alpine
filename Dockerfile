@@ -1,17 +1,10 @@
-FROM python:3.9.10-alpine3.15
+FROM python:3.9.10
 
 
-RUN apk add bash       \
-    &&  apk add git     \
-    &&  apk add wget     \
-    &&  apk add unzip      \
-    &&  apk add nodejs npm  \
-    &&  apk add cmake make gcc
-
+RUN apt update && apt upgrade && apt install -y git wget unzip nodejs npm build-essentials
 
 COPY boot.sh ./
 
-ENV PYTHON /usr/bin/python
 
 RUN python3.9 -m pip install --upgrade pip
 
