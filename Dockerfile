@@ -3,7 +3,7 @@ FROM python:3.9.10
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y git wget unzip nodejs npm build-essential make cmake python2
 
-COPY boot.sh ./
+COPY boot.sh dlunzip.py ./
 
 
 RUN python3.9 -m pip install --upgrade pip
@@ -16,8 +16,7 @@ RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && cd server && python3.9 manage.py migrate \
                 && mkdir /home/logs \
                 && python3.9 -m pip install gdown \
-                && ~/.local/bin/gdown 'https://drive.google.com/uc?id=1zx-20xNBDbCFd8GWhZFUkl07lofbNHpy' /rlcard/pve_server \
-                && unzip /rlcard/pve_server/pretrained.zip -d /rlcard/pve_server \
+                && python3.9 dlunzip.py
                 && chmod +x ./boot.sh
 
 ENTRYPOINT [ "./boot.sh" ]
