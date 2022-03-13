@@ -17,7 +17,7 @@ RUN python3.8 -m pip install --upgrade pip
 
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && cd rlcard \
-                && python3.8 -m pip install rlcard[torch] Django tqdm django-cors-headers flask==1.1 flask-cors onnx onnxruntime \
+                && python3.8 -m pip install rlcard[torch] Django tqdm django-cors-headers flask==1.1 flask-cors onnx git+https://github.com/microsoft/onnxruntime.git \
                 && npm --force install \                
                 && cd server && python3.8 manage.py migrate \
                 && mkdir /home/logs \
