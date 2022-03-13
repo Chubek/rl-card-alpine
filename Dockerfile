@@ -20,7 +20,7 @@ RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
 RUN python3.9 dlunzip.py \
     && chmod +x ./boot.sh
 
-ENTRYPOINT [ "./boot.sh" ]
+CMD [ "./boot.sh" ]
 
 
 

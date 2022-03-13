@@ -1,4 +1,4 @@
-#1/bin/sh
+#!/bin/sh
 
 cd rlcard/server && python3.9 manage.py runserver > /home/logs/server.log
 
