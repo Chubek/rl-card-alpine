@@ -17,11 +17,12 @@ RUN     echo    'alias pip3="/usr/bin/pip3"' >> ~/.bashrc               \
 
 
 ENV PYTHON /usr/bin/python2.7
+ENV PATH   /usr/bin/python2.7:/usr/bin/python3.9:$PATH
 
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && cd rlcard \
-                && npm --force --add-python-to-path='true' install \
-                && pip install -r requirements.txt \
+                && pip3 install -r requirements.txt \
+                && npm --force install \                
                 && cd server && python3 manage.py migrate \
                 && mkdir /home/logs \
                 && pip3 install gdown \
