@@ -11,7 +11,7 @@ COPY boot.sh ./
 
 
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
-                && cd rlcard && npm install && pip install -r requirements.txt && cd server && python3 manage.py migrate \
+                && cd rlcard && npm --force install && pip install -r requirements.txt && cd server && python3 manage.py migrate \
                 && mkdir /home/logs \
                 && pip install gdown \
                 && gdown 'https://drive.google.com/uc?id=1zx-20xNBDbCFd8GWhZFUkl07lofbNHpy' /rlcard/pve_server \
