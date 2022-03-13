@@ -16,7 +16,10 @@ RUN     echo    'alias pip3="/usr/bin/pip3"' >> ~/.bashrc               \
     &&  echo    'alias python="/usr/bin/python2.7"' >> ~/.bashrc
 
 RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
-                && cd rlcard && npm --force install && pip install -r requirements.txt && cd server && python3 manage.py migrate \
+                && cd rlcard \
+                && npm --force --add-python-to-path='true' install \
+                && pip install -r requirements.txt \
+                && cd server && python3 manage.py migrate \
                 && mkdir /home/logs \
                 && pip3 install gdown \
                 && gdown 'https://drive.google.com/uc?id=1zx-20xNBDbCFd8GWhZFUkl07lofbNHpy' /rlcard/pve_server \
