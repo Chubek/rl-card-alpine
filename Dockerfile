@@ -15,9 +15,10 @@ RUN git clone https://github.com/datamllab/rlcard-showdown.git rlcard \
                 && npm --force install \                
                 && cd server && python3.9 manage.py migrate \
                 && mkdir /home/logs \
-                && python3.9 -m pip install gdown \
-                && python3.9 dlunzip.py \
-                && chmod +x ./boot.sh
+                && python3.9 -m pip install gdown
+
+RUN python3.9 dlunzip.py \
+    && chmod +x ./boot.sh
 
 ENTRYPOINT [ "./boot.sh" ]
 
