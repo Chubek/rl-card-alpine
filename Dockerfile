@@ -1,7 +1,7 @@
 FROM python:3.9.10
 
 
-RUN apt update && apt upgrade && apt install -y git wget unzip nodejs npm build-essentials
+RUN apt-get update && apt-get upgrade && apt-get install -y git wget unzip nodejs npm build-essentials
 
 COPY boot.sh ./
 
