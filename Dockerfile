@@ -22,7 +22,7 @@ RUN /usr/bin/python3.9 -m pip install --upgrade pip
 RUN  git clone --recursive https://github.com/Microsoft/onnxruntime \
                 && cd onnxruntime \
                 && ./build.sh --config RelWithDebInfo --build_shared_lib --parallel \
-                && && /usr/bin/python3.9 -m pip install .
+                && /usr/bin/python3.9 -m pip install .
 
 RUN git clone https://github.com/Chubek/rlcard-showdown.git rlcard \
                 && cd rlcard \
